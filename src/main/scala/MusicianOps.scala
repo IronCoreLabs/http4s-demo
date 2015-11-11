@@ -39,7 +39,17 @@ object MockMusicianOps extends MusicianOps {
     Ok(Musician(musicianID.toInt, "Jimi", "Hendrix", List("guitar")))
   }
 
-  def createMusician(req: Request): Task[Response] = Ok("created musician")
+  def createMusician(req: Request): Task[Response] = {
+    req.decode[Musician] { m =>
+      Ok(
+        s"""Received request to create musician:
+           |  id ${m.id}
+           |  first name ${m.firstName}
+           |  last name ${m.lastName}
+           |  instruments ${m.instrument.mkString(", ")}""".stripMargin
+      )
+    }
+  }
 
   def replaceMusician(req: Request, musicianID: String): Task[Response] = Ok("replaced musician")
 

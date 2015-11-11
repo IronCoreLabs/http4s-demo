@@ -6,7 +6,7 @@ import org.http4s.server.blaze.BlazeBuilder
 object MyApp {
 
   def main(args: Array[String]): Unit = {
-    val Port = 9123
+    val Port = 8123
     val UrlSuffix = "/api"
 
     val service: HttpService =
