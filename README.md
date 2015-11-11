@@ -307,3 +307,7 @@ Note that in the `MyService` trait, we enumerate the different sets of operation
 - Versioning the API
 - Providing HREFs/URLs instead of IDs for records
 - Middleware to manipulate request - for instance, handle HTTP headers
+
+## License
+
+Feel free to put to good use - released to the public domain.
